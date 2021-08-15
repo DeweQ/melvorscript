@@ -9,6 +9,9 @@
 // @match        *melvoridle.com/*
 // @grant        none
 // @copyright   2019, BrasilianEngineer
+//
+//
+// Edited to match current version
 // ==/UserScript==
 
 (function() {
