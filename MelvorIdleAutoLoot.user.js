@@ -49,9 +49,9 @@
 
         var hpCurrentLabel = $("#combat-player-hitpoints-current");
         var hpMaxLabel = $("#combat-player-hitpoints-max");
-        var max = +hpMaxLabel.text();
-        var current = +hpCurrentLabel.text();
-        var foodText = eatButton.text();
+        var max = +hpMaxLabel.text().replace(',','');
+        var current = +hpCurrentLabel.text().replace(',','');
+        var foodText = eatButton.text().replace(',','');
 
         foodText = foodText.substr(foodText.indexOf("+") + 1);
         var food = +foodText.substr(0, foodText.length - 3);
@@ -69,9 +69,9 @@
 
         var hpCurrentLabel = $("#thieving-player-hitpoints-current");
         var hpMaxLabel = $("#thieving-player-hitpoints-max");
-        var max = +hpMaxLabel.text();
-        var current = +hpCurrentLabel.text();
-        var foodText = eatButton.text();
+        var max = +hpMaxLabel.text().replace(',','');
+        var current = +hpCurrentLabel.text().replace(',','');
+        var foodText = eatButton.text().replace(',','');
         foodText = foodText.substr(foodText.indexOf("+") + 1);
         var food = +foodText.substr(0, foodText.length - 3);
         console.log(foodText);
