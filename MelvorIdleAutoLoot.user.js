@@ -296,28 +296,19 @@
 
         runAutomationLoop();
     }
-
-    var loadTest = function() {
-        if (!gameIsRunning) {
-            // Test if  game is already loaded or wait 2s and try again
-            console.log("Game not loaded, waiting...");
-        } else {
-            // Game loaded, init auto loot
-            clearInterval(TestTimeout);
-            console.log("Loaded, now rendering");
-            renderHeaderButton();
+	var loadTest = function() {
+       if ($("#page-header-user-dropdown").length === 0 || !$("#page-header-user-dropdown").is(":visible")) {
+           // Test if  game is already loaded or wait 2s and try again
+            setTimeout(function(){
+                loadTest();
+            }, 2000);
+           console.log("Game not loaded, waiting...");
+       } else {
+           // Game loaded, init auto loot
+           console.log("Loaded, now rendering");
+           renderHeaderButton();
         }
     }
 
-    var CheckGame = function(){
-        if ($("#page-header-user-dropdown").length === 0 || !$("#page-header-user-dropdown").is(":visible")) {
-            gameIsRunning = false;
-        }else{
-            gameIsRunning = true;
-            clearInterval(TestTimeout);
-        }
-        loadTest();
-    }
-
-    TestTimeout = setInterval(CheckGame,2000);
+    loadTest();
 })();
