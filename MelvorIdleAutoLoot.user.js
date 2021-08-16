@@ -12,6 +12,8 @@
 //
 //
 // Edited to match current version
+// Updated icons, container id's etc
+// (q) DeweQ
 // ==/UserScript==
 
 (function() {
@@ -27,8 +29,6 @@
         autoRunMode: "",
         autoRunTimer: 5
     }
-    var TestTimeout;
-    var gameIsRunning = false;
 
     var runAutomationLoop = function () {
         eatCombatFoodIfNecessary();
